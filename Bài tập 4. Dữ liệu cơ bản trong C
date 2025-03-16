@@ -1,0 +1,10 @@
+int main() {
+    float R,S,V;
+	    printf("nhap ban kinh hinh cau:");
+	    scanf("%f",&R);
+	    float pi=3.14;
+		  printf("dien tich hinh cau = %f",S=4*pi*R*R);
+		  printf("\nthe tich hinh cau = %f",V=(S*R)/3);
+
+    return 0;
+}
