@@ -2,6 +2,7 @@
 int main ()
 {
 int x;
+printf("nhap so bat ki:");
 scanf("%d", &x);
 printf("x^2 :%d\n", x*x);
 printf("x^3 :%d\n", x*x*x);
