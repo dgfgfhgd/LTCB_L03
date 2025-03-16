@@ -1,0 +1,12 @@
+int main() {
+    int x,y;
+    printf("nhap 2 so nguyen",x ,y);
+    scanf("%d%d", &x,&y);
+    printf("phep cong 2 so nguyen la: %d\n", x+y);
+    printf("phep tru 2 so nguyen la: %d\n", x-y);
+    printf("phep nhan 2 so nguyen la: %d\n", x*y);
+    printf("phep chia 2 so nguyen la: %d\n", x/y);
+    
+
+    return 0;
+}
