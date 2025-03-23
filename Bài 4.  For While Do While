@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    int i, n;
+    printf("n=");
+    scanf("%d", &n);
+    int s=0;
+    for(i=1; i<=n; i+=2){
+        s=s+i; 
+}
+    printf("\nTong cac so le tu 1 den 100 la %d", s);
+    return 0;
+}
