@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int x,y;
+    printf("Moi ban nhap x=");
+    scanf("%d", &x);
+    printf("Moi ban nhap y=");
+    scanf("%d", &y);
+    if(x==1,3,5,7,8,10,12){
+        printf("Thang %d nam %d co 31 ngay\n",x,y);
+    }
+    else if(x==4,6,9,11){
+        printf("Thang %d nam %d co 30 ngay\n",x,y);
+    }
+    if(x==2,y%4==0){
+        printf("Thang 2 nam %d co 29 ngay\n",y);
+    }
+    else{
+        printf("Thang 2 nam %d co 28 ngay\n",y);
+    }
+    return 0;
+}
