@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int a,b,x,y;
+    printf("Moi ban nhap so a=");
+    scanf("%d", &a);
+    printf("Moi ban nhap so b=");
+    scanf("%d", &b);
+    for(x=a; x>=1;x--){
+        if(a%x==0 && b%x==0){
+            printf("Uoc chung lon nhat cua %d va %d la:%d",a,b,x);
+            break;
+        }
+    }
+    for(y=2;;y++){
+        if(y%a==0 && y%b==0){
+            printf("\nBoi chung nho nhat cua %d va %d la:%d",a,b,y);
+            break;
+        }
+    }
+return 0;
+}
