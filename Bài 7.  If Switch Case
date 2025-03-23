@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    float x;
+    printf("Diem so x=");
+    scanf("%f", &x);
+    if(x<5){
+        printf("Yeu");
+    }
+    if(x>=5,x<7){
+        printf("Trung binh");
+    }
+    if(x>=7,x<8){
+        printf("Kha");
+    }
+    if(x>=8,x<9){
+        printf("Gioi");
+    }
+    if(x>=9){
+        printf("Xuat sac");
+    }
+return 0;
+}
