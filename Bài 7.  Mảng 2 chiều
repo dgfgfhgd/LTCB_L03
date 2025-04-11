@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int n = 2, m = 3, q = 2;
+    //a[n][m], b[m][q]
+    int a[n][m] = {
+        {1, 2, 3},
+        {4, 5, 6},
+    };
+    int b[m][q] = {
+        {6, 1},
+        {2, 4},
+        {5, 9},
+    };
+    int c[n][q];
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < q; j++){
+            c[i][j] = 0;
+            for(int k = 0; k < m; k++){
+                c[i][j] += a[i][k] * b[k][j];
+            }
+        }
+    }
+    printf("Tich 2 ma tran : \n");
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < q; j++){
+            printf("%d ", c[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
