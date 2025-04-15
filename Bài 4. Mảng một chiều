@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    int a[10], n;
+    int min, max, vmin, vmax, i;
+    printf("Moi ban nhap n=");
+    scanf("%d", &n);
+    for(i=0; i<n; i++){
+        printf("Nhap phan tu %d ",i);
+        scanf("%d", &a[i]);
+    }
+    min=a[0];
+    vmin=0;
+    for(i=1; i<n; i++){
+        if(min > a[i]){
+          min=a[i];
+          vmin=i;
+        }
+    }
+    printf("min = %d\n, vmin=%d\n", min, vmin);
+    max=a[0];
+    vmax=0;
+    for(i=1; i<n; i++){
+        if(max<a[i]){
+            max=a[i];
+            vmax=i;
+        }
+    }
+    printf("max=%d\n, vmax=%d\n", max, vmax);
+    
+
+    return 0;
+}
