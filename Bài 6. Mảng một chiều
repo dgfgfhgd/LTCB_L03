@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int a[10], n;
+    int i;
+    printf("Moi ban nhap n=");
+    scanf("%d", &n);
+    for(i=0; i<n; i++){
+        printf("Nhap phan tu %d ",i);
+        scanf("%d", &a[i]);
+    }
+    for(i=0; i<n; i++){
+        if(a[i]<0){
+            a[i]=0;
+        }
+    }
+    printf("Ket qua la: ");
+    for(i=0; i<n; i++){
+        printf("%d ", a[i]);
+    }
+
+    return 0;
+}
