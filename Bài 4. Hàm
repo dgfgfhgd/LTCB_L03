@@ -1,0 +1,55 @@
+#include <stdio.h>
+void XuatMaTran(int a[][50], int m, int n)
+{
+   for(int i = 0; i < m; i++)
+   {
+      for(int j = 0; j < n; j++)
+         printf("%d ", a[i][j]);
+      printf("\n");
+   }
+}
+void NhapMaTran(int a[][50], int m, int n)
+{
+   for(int i = 0; i < m; i++)
+   
+      for(int j = 0; j < n; j++)
+   {
+         printf("a[%d %d]=", i, j);
+         scanf("%d",&a[i][j]);
+   }
+}
+void NhanMaTran(int a[][50], int b[][50], int c[][50],int m, int n) {
+    for (int i = 0; i < m; ++i) {
+        for (int j = 0; j < n; ++j) {
+            c[i][j] = 0;
+            for (int k = 0; k < n; ++k) {
+                c[i][j] += a[i][k] * b[k][j];
+            }
+        }
+    }
+}
+
+
+int main() {
+    int a[50][50], b[50][50],c[50][50];
+    int m, n,i,j;
+    printf("Nhap m=", m);
+    scanf("%d",&m);
+    printf("Nhap n=", n);
+    scanf("%d", &n);
+    NhapMaTran(a,m,n);
+    XuatMaTran(a,m,n);
+    NhapMaTran(b,m,n);
+    XuatMaTran(b,m,n);
+    for (i = 0;i < n;i++)
+    {
+    for (j=0;j<n;j++)
+    {
+        printf("%d ",a[i][j]+b[i][j]);
+    }
+        printf("\n");
+    }
+    NhanMaTran(a,b,c,m,n);
+    XuatMaTran(c,m,n);
+       return 0;
+}
