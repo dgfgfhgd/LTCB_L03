@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+  int a, b, c, d, e, f;
+  float D, Dx, Dy, x, y;
+  printf("a*x + b*y = c \n");
+  printf("d*x + e*y = f \n");
+  printf("\nNhập a: "); 
+  scanf("%d", &a);
+  printf("\nNhập b: "); 
+  scanf("%d", &b);
+  printf("\nNhập c: "); 
+  scanf("%d", &c);
+  printf("\nNhập d: "); 
+  scanf("%d", &d);
+  printf("\nNhập e: "); 
+  scanf("%d", &e);
+  printf("\nNhập f: "); 
+  scanf("%d", &f);
+  D = a * e - d * b;
+  Dx = c * e - f * b;
+  Dy = a * f - d * c;
+  if (D == 0) {
+    if (Dx + Dy == 0)
+      printf("Hệ phương trình có vô số nghiệm");
+    else
+      printf("Hệ phương trình vô nghiệm");
+    }
+  //tính x và y theo công thức
+  else {
+    x = Dx / D;
+    y = Dy / D;
+    printf("Hệ phương trình có nghiệm (x, y) = (%.1f, %.1f)", x, y);
+    }
+    return 0;
+}
