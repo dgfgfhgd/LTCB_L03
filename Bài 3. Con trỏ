@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    int arr[100];
+
+    printf("Nhap so phan tu cua mang: ");
+    scanf("%d", &n);
+
+    printf("Nhap cac phan tu cua mang:\n");
+    for(i = 0; i < n; i++) {
+        printf("arr[%d] = ", i);
+        scanf("%d", &arr[i]);
+    }
+
+    int *ptr = arr; 
+    int max = *ptr;
+    int min = *ptr;
+
+    for(i = 1; i < n; i++) {
+        if(*(ptr + i) > max)
+            max = *(ptr + i);
+        if(*(ptr + i) < min)
+            min = *(ptr + i);
+    }
+
+    printf("Gia tri lon nhat trong mang: %d\n", max);
+    printf("Gia tri nho nhat trong mang: %d\n", min);
+return 0;
+}
