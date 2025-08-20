@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Bai6 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // a. Nhap mot mang so nguyen
+        System.out.print("Nhap so phan tu cua mang: ");
+        int n = sc.nextInt();
+        int[] mang = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Nhap phan tu thu " + (i + 1) + ": ");
+            mang[i] = sc.nextInt();
+        }
+
+        // b. Tinh tong mang
+        int tong = 0;
+        for (int i = 0; i < n; i++) {
+            tong += mang[i];
+        }
+
+        // Xuat ket qua
+        System.out.println("Tong cac phan tu trong mang = " + tong);
+    }
+}
