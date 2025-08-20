@@ -1,0 +1,86 @@
+import java.util.Scanner;
+
+class PhanSo {
+    private int tu;
+    private int mau;
+
+    public PhanSo(int tu, int mau) {
+        this.tu = tu;
+        this.mau = mau;
+        rutGon();
+    }
+
+    // Rút gọn phân số
+    private int UCLN(int a, int b) {
+        if (b == 0) return a;
+        return UCLN(b, a % b);
+    }
+
+    public void rutGon() {
+        int gcd = UCLN(Math.abs(tu), Math.abs(mau));
+        tu /= gcd;
+        mau /= gcd;
+        if (mau < 0) { // Đưa mẫu về dương
+            tu = -tu;
+            mau = -mau;
+        }
+    }
+
+    // Xuất phân số
+    public String toString() {
+        if (mau == 1) return tu + "";
+        return tu + "/" + mau;
+    }
+
+    // Các phép toán
+    public PhanSo cong(PhanSo b) {
+        int t = this.tu * b.mau + b.tu * this.mau;
+        int m = this.mau * b.mau;
+        return new PhanSo(t, m);
+    }
+
+    public PhanSo tru(PhanSo b) {
+        int t = this.tu * b.mau - b.tu * this.mau;
+        int m = this.mau * b.mau;
+        return new PhanSo(t, m);
+    }
+
+    public PhanSo nhan(PhanSo b) {
+        return new PhanSo(this.tu * b.tu, this.mau * b.mau);
+    }
+
+    public PhanSo chia(PhanSo b) {
+        return new PhanSo(this.tu * b.mau, this.mau * b.tu);
+    }
+}
+
+public class Bai1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Nhập phân số 1
+        System.out.print("Nhap tu so phan so 1: ");
+        int tu1 = sc.nextInt();
+        System.out.print("Nhap mau so phan so 1: ");
+        int mau1 = sc.nextInt();
+        PhanSo ps1 = new PhanSo(tu1, mau1);
+
+        // Nhập phân số 2
+        System.out.print("Nhap tu so phan so 2: ");
+        int tu2 = sc.nextInt();
+        System.out.print("Nhap mau so phan so 2: ");
+        int mau2 = sc.nextInt();
+        PhanSo ps2 = new PhanSo(tu2, mau2);
+
+        // Xuất
+        System.out.println("\nPhan so 1: " + ps1);
+        System.out.println("Phan so 2: " + ps2);
+
+        // Thực hiện các phép tính
+        System.out.println("\nKet qua cac phep tinh:");
+        System.out.println("Cong: " + ps1.cong(ps2));
+        System.out.println("Tru: " + ps1.tru(ps2));
+        System.out.println("Nhan: " + ps1.nhan(ps2));
+        System.out.println("Chia: " + ps1.chia(ps2));
+    }
+}
