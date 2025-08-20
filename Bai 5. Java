@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Bai7 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Nhap so hang: ");
+        int m = sc.nextInt();
+
+        System.out.print("Nhap so cot: ");
+        int n = sc.nextInt();
+
+        int[][] arr = new int[m][n];
+        int tong = 0;
+        long tich = 1;
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print("Nhap phan tu hang " + (i + 1) + " cot " + (j + 1) + ": ");
+                arr[i][j] = sc.nextInt();
+                tong += arr[i][j];
+                tich *= arr[i][j];
+            }
+        }
+
+        System.out.println("Tong la: " + tong);
+        System.out.println("Tich la: " + tich);
+    }
+}
